@@ -1,0 +1,33 @@
+{
+   "manifest_version": 3,
+   "name": "QuickSummary",
+   "version": "1.0.0",
+   "description": "QuickSummary allows you to summarize web pages and also ask questions related to the content being viewed.",
+   "icons": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "64": "icons/icon64.png"
+   },
+   "action": {
+      "default_icon": {
+         "16": "icons/icon16.png",
+         "32": "icons/icon48.png"
+      },
+      "default_popup": "popup.html",
+      "default_title": "QuickSummary"
+   },
+   "content_scripts": [
+      {
+         "matches": ["http://*/*", "https://*/*"],
+         "js": [
+            "scripts/showdown.js",
+            "scripts/script.js",
+            "scripts/pop.js",
+            "scripts/jquery.min_3.6.0.js",
+            "scripts/Readability.min_0.5.0.js"
+         ],
+         "css": ["css/style.css"],
+         "run_at": "document_end"
+      }
+   ]
+}
